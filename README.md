@@ -2,13 +2,17 @@
   <img width="250" height="250" src="https://raw.githubusercontent.com/robertcorponoi/graphics/master/godot-redux/logo/godot-redux-logo.png">
 </p>
 
-<h1 align="center">Godot Redux</h1>
+<h1 align="center">godot-redux-and-devtools</h1>
 
 <p align="center">A gdscript implementation of Redux.<p>
 
 Redux is a way to manage and update your application's state using events
 called actions. The Redux store serves as a centralized place for data that
 can be used across your entire application.
+
+<p align="center">
+  <img width="1024" height="300" src="https://raw.githubusercontent.com/freekoy/godot-redux-and-devtools/devtools/devtools.png">
+</p>
 
 **Table of Contents**
 
