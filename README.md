@@ -11,7 +11,7 @@ called actions. The Redux store serves as a centralized place for data that
 can be used across your entire application.
 
 <p align="center">
-  <img width="1024" height="300" src="https://raw.githubusercontent.com/freekoy/godot-redux-and-devtools/devtools/devtools.png">
+  <img width="1024" height="300" style="object-fit:contain;" src="https://raw.githubusercontent.com/freekoy/godot-redux-and-devtools/devtools/devtools.png">
 </p>
 
 ## About devtools
