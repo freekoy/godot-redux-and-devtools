@@ -14,6 +14,14 @@ can be used across your entire application.
   <img width="1024" height="300" src="https://raw.githubusercontent.com/freekoy/godot-redux-and-devtools/devtools/devtools.png">
 </p>
 
+## About devtools
+add like redux devtools
+    
+How to use it to see main.gd and devtools.gd
+    
+main.gd is the save.gd
+
+
 **Table of Contents**
 
 - [Concepts](#concepts)
