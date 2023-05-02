@@ -78,7 +78,6 @@ func test():
 		payload = 0
 	})
 	
-	tabs_content_render()
 
 
 func INCREMENT(state, action):
@@ -283,6 +282,7 @@ func print_state_list_and_action_list(state):
 	print(state_list)
 	print("action_list")
 	print(action_list)
+	tabs_content_render()
 
 
 func test_reset():
@@ -395,12 +395,10 @@ func tree_btn_event(item, column, id):
 	elif(selected == state):
 		print('jump')
 		jump(data)
-		tabs_content_render()		
 		
 	elif(selected == action):
 		print('action')
 		run_action(data)
-		tabs_content_render()
 			
 	pass
 
@@ -458,14 +456,12 @@ func _on_TabContainer_tab_selected(tab):
 func init_tab():
 	var all = 0
 	_on_TabContainer_tab_selected(all)
-	tabs_content_render()
 
 
 func _on_dispatch_action_pressed():
 	print($custom_action_panel/TextEdit.text)
 	var action = parse_json($custom_action_panel/TextEdit.text)
 	dispatch(action.type, action.payload)
-	tabs_content_render()
 	$custom_action_panel.hide()
 	pass # Replace with function body.
 
