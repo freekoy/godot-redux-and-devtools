@@ -1,3 +1,20 @@
+extends Node
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = "text"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+
 # Godot Redux - A gdscript implementation of Redux.
 #
 # Redux is a way to manage and update your application's state using events
@@ -23,7 +40,7 @@
 # }
 # ```
 #
-# ### 
+# ###
 #
 # Action are the only way to change the state of a Redux application and in
 # gdscript they are represented by an enum. Let's expand the simple counter
@@ -258,7 +275,7 @@ func dispatch(action):
 		self._dispatch_reducer(action)
 	else:
 		self._dispatch_middleware(0, action)
-	
+
 # Runs a single middleware function. If the middleware function returns an
 # action then it runs the next middleware function in the middlewares array with
 # the action returned by the previous one.
@@ -271,9 +288,9 @@ func _dispatch_middleware(index: int, action):
 	if index == self._middleware.size():
 		self._dispatch_reducer(action)
 		return
-	
+
 	var next = self._middleware[index].call_func(action)
-	
+
 	if next != null:
 		self._dispatch_middleware(index + 1, next)
 
@@ -325,7 +342,7 @@ func _dispatch_subscriptions():
 # func _ready():
 #     var store = Store.new(state, self, 'reducer')
 #     store.subscribe(self, 'print_counter')
-# 
+#
 # func print_counter(state):
 #     print(state.counter)
 # ```
@@ -359,3 +376,6 @@ func subscribe(callback_fn_instance, callback_fn_name):
 func add_middleware(middleware_fn_instance, middleware_fn_name):
 	var middleware_ref = funcref(middleware_fn_instance, middleware_fn_name)
 	self._middleware.append(middleware_ref)
+
+
+

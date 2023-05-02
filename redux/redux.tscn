@@ -1,0 +1,236 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://redux/main.gd" type="Script" id=1]
+[ext_resource path="res://redux/tab_tree.gd" type="Script" id=2]
+
+[node name="Panel" type="Panel"]
+margin_right = 1024.0
+margin_bottom = 253.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="HSplitContainer" type="HSplitContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+split_offset = 400
+
+[node name="left" type="Panel" parent="HSplitContainer"]
+margin_right = 400.0
+margin_bottom = 253.0
+
+[node name="TabContainer" type="TabContainer" parent="HSplitContainer/left"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+tab_align = 0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="all" type="Tabs" parent="HSplitContainer/left/TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Tree" type="Tree" parent="HSplitContainer/left/TabContainer/all"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="state" type="Tabs" parent="HSplitContainer/left/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Tree" type="Tree" parent="HSplitContainer/left/TabContainer/state"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="action" type="Tabs" parent="HSplitContainer/left/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Tree" type="Tree" parent="HSplitContainer/left/TabContainer/action"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="search_input" type="LineEdit" parent="HSplitContainer/left"]
+margin_left = 197.0
+margin_top = 1.0
+margin_right = 326.0
+margin_bottom = 25.0
+align = 1
+placeholder_text = "search action"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="search_btn" type="Button" parent="HSplitContainer/left"]
+margin_left = 333.0
+margin_top = 3.0
+margin_right = 418.0
+margin_bottom = 23.0
+text = "search"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="right" type="Panel" parent="HSplitContainer"]
+margin_left = 412.0
+margin_right = 1024.0
+margin_bottom = 253.0
+size_flags_horizontal = 3
+
+[node name="btns" type="GridContainer" parent="HSplitContainer/right"]
+margin_left = 28.0
+margin_top = 2.0
+margin_right = 388.0
+margin_bottom = 26.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="run_custom_action" type="Button" parent="HSplitContainer/right/btns"]
+margin_right = 132.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "run_custom_action"
+
+[node name="export" type="Button" parent="HSplitContainer/right/btns"]
+margin_left = 136.0
+margin_right = 191.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "export"
+
+[node name="import" type="Button" parent="HSplitContainer/right/btns"]
+margin_left = 195.0
+margin_right = 250.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "import"
+
+[node name="GridContainer" type="GridContainer" parent="HSplitContainer/right"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 29.0
+margin_top = 36.0
+margin_right = -4.0
+margin_bottom = -8.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 2
+
+[node name="diff1" type="Tree" parent="HSplitContainer/right/GridContainer"]
+margin_right = 288.0
+margin_bottom = 209.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 2 )
+
+[node name="diff2" type="Tree" parent="HSplitContainer/right/GridContainer"]
+margin_left = 292.0
+margin_right = 579.0
+margin_bottom = 209.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 2 )
+
+[node name="tips" type="PopupPanel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -147.5
+margin_top = -60.5
+margin_right = 147.5
+margin_bottom = 60.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="tips"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 291.0
+margin_bottom = 117.0
+text = "tips"
+
+[node name="custom_action_panel" type="PopupDialog" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -158.5
+margin_top = -94.5
+margin_right = 158.5
+margin_bottom = 94.5
+size_flags_horizontal = 0
+size_flags_vertical = 0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TextEdit" type="TextEdit" parent="custom_action_panel"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -138.5
+margin_top = 19.0
+margin_right = 144.5
+margin_bottom = 122.0
+text = "{
+\"type\":\"\",
+\"payload\":\"\"
+}"
+wrap_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dispatch_action" type="Button" parent="custom_action_panel"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -56.5
+margin_top = -60.0
+margin_right = 52.5
+margin_bottom = -16.0
+text = "dispatch action"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="tab_selected" from="HSplitContainer/left/TabContainer" to="." method="_on_TabContainer_tab_selected"]
+[connection signal="pressed" from="HSplitContainer/left/search_btn" to="." method="_on_search_btn_pressed"]
+[connection signal="pressed" from="HSplitContainer/right/btns/run_custom_action" to="." method="_on_run_custom_action_pressed"]
+[connection signal="pressed" from="HSplitContainer/right/btns/export" to="." method="export_all"]
+[connection signal="pressed" from="HSplitContainer/right/btns/import" to="." method="import_all"]
+[connection signal="pressed" from="custom_action_panel/dispatch_action" to="." method="_on_dispatch_action_pressed"]
